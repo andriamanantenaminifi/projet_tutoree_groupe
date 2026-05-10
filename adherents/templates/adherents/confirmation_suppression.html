@@ -5,18 +5,18 @@
 {% endblock %}
 
 {% block content %}
-  <div>
-    <div>
-      <p>{{ adherent.matricule }}</p>
-      <p>{{ adherent.nom }}</p>
-      <p>{{ adherent.prenom }}</p>
-      <p>{{ adherent.email }}</p>
+  <div class="container-fluid display-5 fs-md-5 fs-3">
+    <div class="col-md-8 mx-auto text-center">
+      <p class="badge bg-primary">{{ adherent.matricule }}</p>
+      <p class="fw-bold">{{ adherent.nom }}</p>
+      <p class="fw-medium">{{ adherent.prenom }}</p>
+      <p class="fw-medium">{{ adherent.email }}</p>
       <p>{{ adherent.fonction }}</p>
     </div>
-    <form method="post">
+    <form method="post" class="text-center">
       {% csrf_token %}
-      <button type="submit">Supprimer</button>
-      <a href="#">Annuler</a>
+      <button type="submit" class="btn btn-danger btn-lg">Supprimer</button>
+      <a href="{% url 'listeAdherent' %}" class="btn btn-secondary">Annuler</a>
     </form>
   </div>
 {% endblock %}
